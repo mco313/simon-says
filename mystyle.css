@@ -22,3 +22,7 @@
 #blue {
   background-color: blue;
 }
+
+.active {
+  opacity: .5
+}
