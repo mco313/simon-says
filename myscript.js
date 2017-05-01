@@ -49,8 +49,6 @@ gameObj.userPlay = function () {
     setTimeout(function () {
         divPressed.classList.remove('active');
     }, 500);
-    console.log('just pressed: ' + playerChoices[choiceLoc]);
-    console.log('correct choice: ' + currentGame[choiceLoc]);
     if (colorPressed !== currentGame[choiceLoc]) {
         gameObj.wrongChoice();
     } else {
@@ -65,6 +63,9 @@ gameObj.userPlay = function () {
 
 gameObj.playSequence = function () {
     'use strict';
+    colorButtons.forEach(function (elem) {
+        elem.removeEventListener('click', gameObj.userPlay);
+    });
     let index = 0;
     function playNext() {
         if (index < currentGame.length) {
@@ -78,6 +79,9 @@ gameObj.playSequence = function () {
             index += 1;
         } else {
             console.log('loopEnd');
+            colorButtons.forEach(function (elem) {
+                elem.addEventListener('click', gameObj.userPlay);
+            });
             // playTimer = setInterval(gameObj.wrongChoice, 3000);
             return;
         }
