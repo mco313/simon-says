@@ -3,6 +3,7 @@
 <html lang='en'>
 <head>
   <meta charset='utf-8'>
+  <link href="https://fonts.googleapis.com/css?family=Electrolize|Roboto|Sarpanch:900" rel="stylesheet">
   <link rel='stylesheet' type='text/css' href='mystyle.css'>
   <title>Simon Says</title>
 </head>
@@ -10,33 +11,46 @@
 <body>
 
 <div id='wrapper'>
-  <div id='red' class='game-button' data-color='red'>
-  </div>
-  <div id='yellow' class='game-button' data-color='yellow'>
-  </div>
-  <div id='control'>
-    <div id='level'>
-      <div id='display'>
-        <p>0</p>
-      </div>
-      <div>
-        <p>Level</p>
-      </div>
+  <div class='row-top'>
+    <div id='red' class='game-button no-clicks' data-color='red'>
     </div>
-    <div id='on-switch'>
-      <button id='switch'>Power</button>
-      <span id='on-light'></span>
-      <button id='strict'>Strict Mode</button>
-      <span id='strict-light'></span>
+    <div id='yellow' class='game-button no-clicks' data-color='yellow'>
     </div>
-    <div id='start'>
-      <button id='start-button'>Start Game!</button>
+  </div>
+  <div id='panel' class='row-center'>
+    <div id='simon'>
+      <h2>SIMON<span id='reg'>&reg</span></h2>
+    </div>
+    <div id='control'>
+      <div id='level'>
+        <div id='display'>
+        </div>
+        <div>
+          <p>Level</p>
+        </div>
+      </div>
+      <div class="switch">
+        <input id="switch" class="cmn-toggle cmn-toggle-round" type="checkbox">
+        <label for="switch"></label>
+        <span id='power'>Off / On</span>
+        <span id='strict-light' class='strict-led'></span>
+        <button id='strict' class='no-clicks btn-strict'></button><br>
+        <span id='strictLabel'>Strict</span>
+      </div>
+      <div id='start'>
+        <button id='start-button' class='no-clicks btn-start'></button><br>
+        <span>Start<span>
+      </div>
+      <div id='winner'>
+      </div>
     </div>
     <!-- End Control Div -->
   </div>
-  <div id='green' class='game-button' data-color='green'>
-  </div>
-  <div id='blue' class='game-button' data-color='blue'>
+  <div class='row-bottom'>
+    <div id='green' class='game-button no-clicks' data-color='green'>
+    </div>
+    <div id='blue' class='game-button no-clicks' data-color='blue'>
+    </div>
   </div>
 <!-- End Wrapper div -->
 </div>
